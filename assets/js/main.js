@@ -216,6 +216,12 @@
         return;
       }
 
+      if (document.body.classList.contains('index-page') &&
+          this.closest('#portfolio') &&
+          href.includes('-details.')) {
+        history.replaceState(null, '', `${window.location.pathname}#portfolio`);
+      }
+
       e.preventDefault();
       document.body.classList.remove('page-loaded');
 
